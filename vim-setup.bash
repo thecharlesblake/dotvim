@@ -6,8 +6,8 @@ git submodule update --init
 
 echo "
 function f () {
-    if [  !=  ] ; then
-        cd  && ls
+    if [ \"\$1\"  != \"\" ] ; then
+        cd \"\$@\" && ls
     else
         ls
     fi
