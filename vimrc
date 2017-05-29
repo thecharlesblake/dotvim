@@ -60,10 +60,6 @@ set completeopt+=longest
 " graphical menu of matches in command prompt 
 set wildmenu
 
-" solarized vim
-set background=dark
-colorscheme solarized
-
 " --- Syntastic ---
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 map <C-s> :SyntasticToggleMode<CR>
@@ -77,31 +73,4 @@ let g:syntastic_check_on_wq = 0
 
 " --- Nerd Tree
 map <C-n> :NERDTreeToggle<CR>
-
-" --- Haskell-specific ---
-" http://www.stephendiehl.com/posts/vim_2016.html
-
-" GHC mod functions
-nmap <silent> tw :GhcModTypeInsert<CR>
-nmap <silent> ts :GhcModSplitFunCase<CR>
-nmap <silent> tq :GhcModType<CR>
-nmap <silent> te :GhcModTypeClear<CR>
-
-" supertab
-let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
-if has("gui_running")
-    imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
-else " no gui
-    if has("unix")
-        inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
-    endif
-endif
-let g:haskellmode_completion_ghc = 1
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-
-" tabularize
-let g:haskell_tabular = 1
-vmap a= :Tabularize /=<CR>
-vmap a; :Tabularize /::<CR>
-vmap a- :Tabularize /-><CR>
 
