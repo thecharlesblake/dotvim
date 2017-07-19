@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/inputrc ~/.inputrc
 cd ~/.vim
 git submodule update --init
 
@@ -14,4 +15,3 @@ function f () {
     fi
 }
 " >> ~/.bashrc
-
